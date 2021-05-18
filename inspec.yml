@@ -11,6 +11,22 @@ supports:
   - platform: aws
   
 inputs:
+
+  - name: rds_name
+    description: Default for this value is set to True
+    value: 'appdevrds'
+    type: String
+
+  - name: region
+    description: Default for this value is set to eu-west-2
+    value: 'eu-west-2'
+    type: String
+    
+  - name: rds_engine
+    description: Default for this value is set to 'postgres'
+    value: 'postgres'
+    type: String
+
   - name: rds_publicly_accessible
     description: Default for this value is set to True
     value: true
