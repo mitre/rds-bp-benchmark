@@ -1,31 +1,31 @@
-title 'RDS - Best Practise - Storage'
-
-# inputs
-rds = input('rds_name')
-rds_allocated_storage = input('rds_allocated_storage')
-rds_copy_tags_to_snapshot = input('rds_copy_tags_to_snapshot')
-rds_storage_encrypted = input('rds_storage_encrypted')
+title 'RDS - Best Practice - Storage'
 
 control 'encrypted storage' do
-  impact 1.0
+  impact 0.5
+  tag nist: ['CM-6']
+  tag severity: 'medium'
   title 'storage encrypted is on'
-  describe aws_rds_instance(rds) do
-    its('storage_encrypted')       { should eq rds_storage_encrypted }
+  describe aws_rds_instance(input('rds_name')) do
+    its('storage_encrypted') { should eq input('rds_storage_encrypted') }
   end
 end
 
 control 'allocated_storage' do
-  impact 1.0
+  impact 0.5
+  tag nist: ['CM-6']
+  tag severity: 'medium'
   title 'necessary allocated storage provided'
-  describe aws_rds_instance(rds) do
-    its('allocated_storage')       { should eq rds_allocated_storage }
+  describe aws_rds_instance(input('rds_name')) do
+    its('allocated_storage') { should eq input('rds_allocated_storage') }
   end
 end
 
 control 'snapshot tags' do
-  impact 1.0
+  impact 0.5
+  tag nist: ['CM-6']
+  tag severity: 'medium'
   title 'tags are copied to snapshots'
-  describe aws_rds_instance(rds) do
-    its('copy_tags_to_snapshot')   { should eq rds_copy_tags_to_snapshot }
+  describe aws_rds_instance(input('rds_name')) do
+    its('copy_tags_to_snapshot') { should eq input('rds_copy_tags_to_snapshot') }
   end
 end

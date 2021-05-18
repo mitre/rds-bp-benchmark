@@ -2,57 +2,57 @@ name: rds-bp-benchmark
 summary: An InSpec Compliance Profile for AWS RDS best practices
 version: 0.1.0
 inspec_version: '~> 4'
-inputs:
-# Configuration
-
-- name: rds_publicly_accessible
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-- name: rds_auto_minor_version_upgrade
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-- name: rds_deletion_protection
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-- name: rds_iam_database_authentication_enabled
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-- name: rds_performance_insights_enabled
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-# Storage
-- name: rds_storage_encrypted
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-- name: rds_allocated_storage
-  description: Default for this value is set to 5
-  value: 5
-  type: Numeric
-
-- name: rds_copy_tags_to_snapshot
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
-
-# Network
-- name: rds_multi_az
-  description: Default for this value is set to True
-  value: true
-  type: Boolean
 
 depends:
   - name: inspec-aws
     url: https://github.com/inspec/inspec-aws/archive/master.tar.gz
+    
 supports:
   - platform: aws
+  
+inputs:
+  - name: rds_publicly_accessible
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  - name: rds_auto_minor_version_upgrade
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  - name: rds_deletion_protection
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  - name: rds_iam_database_authentication_enabled
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  - name: rds_performance_insights_enabled
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+  # Storage
+  - name: rds_storage_encrypted
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  - name: rds_allocated_storage
+    description: Default for this value is set to 5
+    value: 5
+    type: Numeric
+
+  - name: rds_copy_tags_to_snapshot
+    description: Default for this value is set to True
+    value: true
+    type: Boolean
+
+  # Network
+  - name: rds_multi_az
+    description: Default for this value is set to True
+    value: true
+    type: Boolean

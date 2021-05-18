@@ -9,8 +9,6 @@ class RdsHelper < Inspec.resource(1)
   end
   
   def get_security_group_id(name, region)
-    # puts "Name:    #{name}"
-    # puts "region:  #{region}"
     output = ''
     ec2_client = Aws::EC2::Client.new(region: region)
     response = ec2_client.describe_security_groups
