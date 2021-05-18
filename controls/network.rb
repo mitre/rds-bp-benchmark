@@ -16,7 +16,7 @@ control 'security_group' do
   tag severity: 'medium'
   title 'security_group assigned'
   describe aws_rds_instance(input('rds_name')) do
-    its('vpc_security_groups.first.vpc_security_group_id') { should eq rds_helper.get_security_group_id(input('rds_securitygroup'), input('region')) }
+    its('vpc_security_groups.first.vpc_security_group_id') { should eq rds_helper.get_security_group_id(input('rds_securitygroup'), input('aws_region')) }
   end
 end
 

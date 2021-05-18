@@ -16,11 +16,6 @@ inputs:
     description: Name of the rds you want to query
     value: 'appdevrds'
     type: String
-
-  - name: region
-    description: Region used when needed in all queries (This is used cross aws-bp baselines)
-    value: 'eu-west-2'
-    type: String
     
   - name: rds_engine
     description: The type of rds engine used (Postgres, Oracle, MySQL, MSSQL etc)
@@ -72,3 +67,9 @@ inputs:
     description: rds is configured for multi availability zone
     value: true
     type: Boolean
+
+  # Global settings
+  - name: aws_region
+    description: Region used when needed in all queries (This is used cross aws-bp baselines)
+    value: 'eu-west-2'
+    type: String
