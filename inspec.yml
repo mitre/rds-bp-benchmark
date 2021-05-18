@@ -13,62 +13,62 @@ supports:
 inputs:
 
   - name: rds_name
-    description: Default for this value is set to True
+    description: Name of the rds you want to query
     value: 'appdevrds'
     type: String
 
   - name: region
-    description: Default for this value is set to eu-west-2
+    description: Region used when needed in all queries (This is used cross aws-bp baselines)
     value: 'eu-west-2'
     type: String
     
   - name: rds_engine
-    description: Default for this value is set to 'postgres'
+    description: The type of rds engine used (Postgres, Oracle, MySQL, MSSQL etc)
     value: 'postgres'
     type: String
 
   - name: rds_publicly_accessible
-    description: Default for this value is set to True
+    description: Is the rds instance set to be publicly available
     value: true
     type: Boolean
 
   - name: rds_auto_minor_version_upgrade
-    description: Default for this value is set to True
+    description: Allow automatic minor versions upgrade
     value: true
     type: Boolean
 
   - name: rds_deletion_protection
-    description: Default for this value is set to True
+    description: Instance deletion is enabled
     value: true
     type: Boolean
 
   - name: rds_iam_database_authentication_enabled
-    description: Default for this value is set to True
+    description: Is IAM authentication enabled on the instance
     value: true
     type: Boolean
 
   - name: rds_performance_insights_enabled
-    description: Default for this value is set to True
+    description: Is rds performance insights configured
     value: true
     type: Boolean
   # Storage
   - name: rds_storage_encrypted
-    description: Default for this value is set to True
+    description: storage encryption enabled
     value: true
     type: Boolean
 
   - name: rds_allocated_storage
-    description: Default for this value is set to 5
+    description: Storage size for the instance
     value: 5
     type: Numeric
 
   - name: rds_copy_tags_to_snapshot
-    description: Default for this value is set to True
+    description: Copy tags to snapshots is enabled
     value: true
     type: Boolean
 
   # Network
   - name: rds_multi_az
-    description: Default for this value is set to True
+    description: rds is configured for multi availability zone
     value: true
     type: Boolean
